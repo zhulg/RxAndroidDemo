@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
           场景描述：小区有A，B区，A区有A1,A2,A3.B区有B1，B2，B3..等
           实现：查看所有A区楼号和B区所有具体楼号，开发商B6号楼为内部团购需要过滤掉
          */
-        Observable.just(A_QU,B_QU)
+ /*       Observable.just(A_QU,B_QU)
                 .flatMap(new Func1<String, Observable<String>>() {
                     @Override
                     public Observable<String> call(String s) {
@@ -158,9 +158,39 @@ public class MainActivity extends AppCompatActivity {
                     public void call(String s) {
                         Log.d(TAG, "====Flatmap() call s=" + s);
                     }
-                });
+                });*/
         //.======事件变换 flatmap()与filter结合使用 end ======================
 
+
+
+
+        //9.======其他操作符举例take,doonnext begin =============================
+        /*
+          场景描述：小区有A，B区，A区有A1,A2,A3.B区有B1，B2，B3..等
+          实现：查看所有A区楼号和B区所有具体楼号，开发商B6号楼为内部团购需要过滤掉
+         */
+        Observable.just(A_QU,B_QU)
+                .flatMap(new Func1<String, Observable<String>>() {
+                    @Override
+                    public Observable<String> call(String s) {
+                        return Observable.from(Lou_Hao.get(s));
+                    }
+                })
+                .take(5) //最多能输出5个
+                .doOnNext(new Action1<String>() {
+                    //发出事物时额外添加一些动作
+                    @Override
+                    public void call(String s) {
+                        Log.d(TAG, "====doOnNext() call s=" + s);
+                    }
+                })
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String s) {
+                        Log.d(TAG, "====Flatmap() call s=" + s);
+                    }
+                });
+        //.======其他操作符举例take,doonnext  end ======================
 
     }
 
