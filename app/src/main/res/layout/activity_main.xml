@@ -10,7 +10,13 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <Button
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看运行日志，学习Rxjava相关用法"
+        />
+
+<!--    <Button
         android:id="@+id/button1"
         android:text="button1"
         android:layout_width="wrap_content"
@@ -26,5 +32,5 @@
         android:id="@+id/button3"
         android:text="button3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"/>-->
 </LinearLayout>
