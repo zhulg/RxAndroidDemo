@@ -6,7 +6,7 @@ android:
     # - platform-tools
     # - tools
     - tools
-    - build-tools-23.0.2              
+    - build-tools-23.0.1              
     - android-23                     
     - extra-android-m2repository     # Android Support Repository
     - extra-android-support          # Support Library
