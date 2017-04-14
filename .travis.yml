@@ -8,5 +8,7 @@ android:
   - extra-android-support
   - extra
   - extra-android-m2repository
+ before_install:     
+ - chmod +x gradlew  # 改变gradlew的访问权限
 script:
   - ./gradlew assembleDebug
