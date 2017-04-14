@@ -1,4 +1,6 @@
 language: android
+ before_install:
+ - chmod +x gradlew
 android:
   components:
   - tools
@@ -8,7 +10,7 @@ android:
   - extra-android-support
   - extra
   - extra-android-m2repository
- before_install:
- - chmod +x gradlew
+ jdk:
+  - oraclejdk8
 script:
   - ./gradlew assembleDebug
