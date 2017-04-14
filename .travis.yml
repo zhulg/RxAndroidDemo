@@ -1,16 +1,12 @@
 language: android
 android:
   components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
-    # - platform-tools
-    # - tools
-    - tools
-    - build-tools-23.0.1              
-    - android-23                     
-    - extra-android-m2repository     # Android Support Repository
-    - extra-android-support          # Support Library
-before_install:     
- - chmod +x gradlew  # 改变gradlew的访问权限
+  - tools
+  - platform-tools
+  - build-tools-23.0.1
+  - android-23
+  - extra-android-support
+  - extra
+  - extra-android-m2repository
 script:
   - ./gradlew assembleDebug
